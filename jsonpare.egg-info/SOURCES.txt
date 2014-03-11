@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+jsonpare/__init__.py
+jsonpare.egg-info/PKG-INFO
+jsonpare.egg-info/SOURCES.txt
+jsonpare.egg-info/dependency_links.txt
+jsonpare.egg-info/entry_points.txt
+jsonpare.egg-info/top_level.txt
+jsonpare.egg-info/zip-safe

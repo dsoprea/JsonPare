@@ -1,0 +1,37 @@
+#!/usr/bin/env python2.7
+
+import sys
+sys.path.insert(0, '.')
+
+from argparse import ArgumentParser
+from json import load, dump
+from sys import stdin, stdout, stderr, exit
+
+from jsonpare import pare
+
+parser = ArgumentParser(description='Extract a member from the JSON block')
+parser.add_argument('key_path', help="Key path ('member1', 'member2.child1...')")
+parser.add_argument('-v', '--verbose', action='store_true', help='Display more detail')
+parser.add_argument('-p', '--plain_scalars', action='store_true', help='Return plaintext when the result is a scalar.')
+
+args = parser.parse_args()
+is_verbose = args.verbose
+key_path = args.key_path
+plain_scalars = args.plain_scalars
+
+data = load(stdin)
+
+try:
+    pared = pare(data, key_path, is_verbose)
+except ValueError as e:
+    stderr.write("Error: %s\n\n" % (e))
+    exit(5)
+
+if issubclass(pared.__class__, (list, dict)) is True or plain_scalars is False:
+    dump(pared, stdout)
+    stdout.write("\n")
+    exit(0)
+else:
+    stdout.write(str(pared))
+    stdout.write("\n")
+    exit(1)
