@@ -1,9 +1,9 @@
 ##Introduction
 
 *jsonpare* is an efficient command-line utility that simply picks a single item 
-out of a JSON object/dictionary or list, and prints another JSON string. You 
-can pick an item at the top-level, or provide a "key path" that picks down 
-through multiple levels.
+out of a JSON object/dictionary or list and prints another JSON string. You can
+pick an item at the top-level, or provide a "key path" that picks down through 
+multiple levels.
 
 ##Example
 

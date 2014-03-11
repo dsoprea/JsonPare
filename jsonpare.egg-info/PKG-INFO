@@ -1,11 +1,11 @@
 Metadata-Version: 1.0
 Name: jsonpare
-Version: 0.1.0dev
-Summary: A very simple utility to decode and unwrap a JSON string from the command-line.
-Home-page: UNKNOWN
-Author: UNKNOWN
+Version: 0.1.0
+Summary: A very simple utility to decode and unwind JSON into JSON from the command-line.
+Home-page: https://github.com/dsoprea/JsonPare
+Author: Dustin Oprea
 Author-email: myselfasunder@gmail.com
 License: GPL 2
-Description: UNKNOWN
+Description: A very simple utility to decode and unwind JSON into JSON from the command-line.
 Keywords: json commandline command-line
 Platform: UNKNOWN

@@ -3,3 +3,5 @@
 /include/
 /bin/
 /.Python
+/build/
+/dist/
