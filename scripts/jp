@@ -12,7 +12,7 @@ from jsonpare import pare
 parser = ArgumentParser(description='Extract a member from the JSON block')
 parser.add_argument('key_path', help="Key path ('member1', 'member2.child1...')")
 parser.add_argument('-v', '--verbose', action='store_true', help='Display more detail')
-parser.add_argument('-p', '--plain_scalars', action='store_true', help='Return plaintext when the result is a scalar.')
+parser.add_argument('-p', '--plain_scalars', action='store_true', help='Return plaintext when the result is a scalar')
 
 args = parser.parse_args()
 is_verbose = args.verbose
@@ -28,7 +28,7 @@ except ValueError as e:
     exit(5)
 
 if issubclass(pared.__class__, (list, dict)) is True or plain_scalars is False:
-    dump(pared, stdout)
+    dump(pared, stdout, indent=4, separators=(',', ': '))
     stdout.write("\n")
     exit(0)
 else:

@@ -1,6 +1,6 @@
 from sys import stderr
 
-def pare(data, key, is_verbose):
+def pare(data, key, is_verbose=False):
     parts = key.split('.')
 
     i = 0

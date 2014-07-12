@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import sys, os
 
 setup(name='jsonpare',
-      version='0.2.7',
+      version='0.2.8',
       description="A very simple utility to decode and unwind JSON into JSON from the command-line.",
       long_description="A very simple utility to decode and unwind JSON into JSON from the command-line.",
       classifiers=[],
