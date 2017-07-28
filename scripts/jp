@@ -13,6 +13,7 @@ parser = ArgumentParser(description='Extract a member from the JSON block')
 parser.add_argument('key_path', help="Key path ('member1', 'member2.child1...')")
 parser.add_argument('-v', '--verbose', action='store_true', help='Display more detail')
 parser.add_argument('-p', '--plain_scalars', action='store_true', help='Return plaintext when the result is a scalar')
+parser.add_argument('-s', '--separator', default='.', help="Separator (defaults to '.')")
 
 args = parser.parse_args()
 is_verbose = args.verbose
@@ -22,7 +23,12 @@ plain_scalars = args.plain_scalars
 data = load(stdin)
 
 try:
-    pared = pare(data, key_path, is_verbose)
+    pared = \
+        pare(
+            data,
+            key_path,
+            is_verbose=is_verbose,
+            separator=args.separator)
 except ValueError as e:
     stderr.write("Error: %s\n\n" % (e))
     exit(5)

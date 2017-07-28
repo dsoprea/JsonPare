@@ -1,7 +1,7 @@
 from sys import stderr
 
-def pare(data, key, is_verbose=False):
-    parts = key.split('.')
+def pare(data, key, is_verbose=False, separator='.'):
+    parts = key.split(separator)
 
     i = 0
     ptr = data

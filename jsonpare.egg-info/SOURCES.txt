@@ -1,8 +1,0 @@
-setup.py
-jsonpare/__init__.py
-jsonpare.egg-info/PKG-INFO
-jsonpare.egg-info/SOURCES.txt
-jsonpare.egg-info/dependency_links.txt
-jsonpare.egg-info/not-zip-safe
-jsonpare.egg-info/top_level.txt
-scripts/jp
