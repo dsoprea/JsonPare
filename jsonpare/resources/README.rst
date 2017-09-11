@@ -1,3 +1,5 @@
+|build-status|
+
 ============
 Introduction
 ============
@@ -30,3 +32,5 @@ return code of 1, rather than 0)::
 
     $ cat example.json | jp a.2 -p | jp -p b.3
     text
+
+.. |build-status| image:: https://travis-ci.org/dsoprea/JsonPare.svg?branch=master
