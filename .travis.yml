@@ -1,0 +1,10 @@
+language: python
+python:
+  - "2.7"
+
+install:
+  - pip install -r jsonpare/resources/requirements.txt
+  - pip install coveralls
+script: nosetests --with-coverage --cover-package=jsonpare
+after_success:
+  - coveralls
