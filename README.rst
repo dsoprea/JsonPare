@@ -1,0 +1,1 @@
+jsonpare/resources/README.rst

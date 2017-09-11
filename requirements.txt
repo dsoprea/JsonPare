@@ -1,0 +1,1 @@
+jsonpare/resources/requirements.txt
