@@ -18,11 +18,13 @@ parser.add_argument('key_path', help="Key path ('member1', 'member2.child1...')"
 parser.add_argument('-v', '--verbose', action='store_true', help='Display more detail')
 parser.add_argument('-p', '--plain_scalars', action='store_true', help='Return plaintext when the result is a scalar')
 parser.add_argument('-s', '--separator', default='.', help="Separator (defaults to '.')")
+parser.add_argument('-n', '--no-pretty', action='store_true', help="Do not pretty-print")
 
 args = parser.parse_args()
 is_verbose = args.verbose
 key_path = args.key_path
 plain_scalars = args.plain_scalars
+do_pretty = args.no_pretty is False
 
 data = json.load(sys.stdin)
 
@@ -38,10 +40,13 @@ except ValueError as e:
     sys.exit(5)
 
 if issubclass(pared.__class__, (list, dict)) is True or plain_scalars is False:
-    json.dump(pared, sys.stdout, indent=4, separators=(',', ': '))
-    sys.stdout.write("\n")
-    sys.exit(0)
+    if do_pretty is True:
+        json.dump(pared, sys.stdout, indent=4, separators=(',', ': '))
+        sys.stdout.write("\n")
+    else:
+        json.dump(pared, sys.stdout)
 else:
     sys.stdout.write(str(pared))
-    sys.stdout.write("\n")
-    sys.exit(1)
+
+    if do_pretty is True:
+        sys.stdout.write("\n")
